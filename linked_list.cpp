@@ -48,6 +48,32 @@ void insert_begining(int data)
 }
 
 
+//this code only works on valid position
+void insert_in_a_position(int data, int position)
+{
+    // creating the inserting node
+    Node* inserting_node = new Node();
+    inserting_node->data = data;
+    inserting_node->next = NULL;
+
+    if(position == 1)
+    {
+        //same logic as inserting in the beginning
+        inserting_node->next = head;
+        head = inserting_node;
+    }
+    else
+    {
+        Node* temp_node = head;
+        for(int i = 0; i < position-2; i++)       // why position-2 ?? -> in the beginning head is pointing the first position
+        {                                         // and so if the position is 3 then the loop run only one iteration but reach
+            temp_node = temp_node->next;          // n-1 which is second position.
+        }
+        inserting_node->next = temp_node->next;
+        temp_node->next = inserting_node;
+    }
+}
+
 
 
 void print_linked_list()
