@@ -35,6 +35,20 @@ void insert_last(int data)
     }
 }
 
+void insert_begining(int data)
+{
+    //creating the inserting node
+    Node* inserting_node = new Node();
+    inserting_node->data = data;
+    inserting_node->next = NULL;
+
+    //insert the new node to first position
+    inserting_node->next = head;
+    head = inserting_node;
+}
+
+
+
 
 void print_linked_list()
 {
