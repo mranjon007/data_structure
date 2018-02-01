@@ -75,6 +75,26 @@ void insert_in_a_position(int data, int position)
 }
 
 
+void delete_in_a_position(int position)
+{
+    Node* temp_node = head;
+    if(position == 1)
+    {
+        head = temp_node->next;
+        //free(temp_node);
+    }
+    else
+    {
+        for(int i=0; i<position-2; i++)
+        {
+            temp_node = temp_node->next;
+        }
+        Node* deleting_node = temp_node->next;
+        temp_node->next = deleting_node->next;
+        //free(deleting_node)
+    }
+}
+
 
 void print_linked_list()
 {
