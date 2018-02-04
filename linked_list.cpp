@@ -109,6 +109,23 @@ void print_linked_list()
 }
 
 
+void reverse_linked_list()
+{
+    Node* previous_node = NULL;
+    Node* next_node = NULL;
+    Node* current_node = head;
+
+    while(current_node!=NULL)
+    {
+        next_node = current_node->next;
+        current_node->next = previous_node;
+        previous_node = current_node;
+        current_node = next_node;
+    }
+    head = previous_node;
+}
+
+
 int main()
 {
     return 0;
