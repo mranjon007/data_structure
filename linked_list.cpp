@@ -126,6 +126,22 @@ void reverse_linked_list()
 }
 
 
+// reverse list using recursion
+void reverse_link_list_using_recursion(Node* temp_node)
+{
+    if(temp_node->next == NULL)
+    {
+        head = temp_node;
+        return;
+    }
+    reverse_link_list_using_recursion(temp_node->next);
+    Node* previous_node = temp_node->next;
+    previous_node->next = temp_node;
+    temp_node->next = NULL;
+}
+
+
+
 int main()
 {
     return 0;
