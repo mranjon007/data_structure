@@ -130,6 +130,7 @@ void print_linked_list_in_reverse_using_recursion(Node* current_node)
     cout<< current_node->data << " ";
 }
 
+
 void reverse_linked_list()
 {
     Node* previous_node = NULL;
@@ -165,5 +166,87 @@ void reverse_link_list_using_recursion(Node* temp_node)
 
 int main()
 {
+    int element_number, node_data, option=-1, position;
+    cout << "Enter number of element: ";
+    cin >> element_number;
+
+    for(int i = 0; i<element_number; i++)
+    {
+        cout << "Enter node data: ";
+        cin >> node_data;
+        insert_last(node_data);
+        cout<< "modified list after insertion: ";
+        print_linked_list();
+    }
+
+    while(option != 0)
+    {
+        if(option == 1)
+        {
+            cout << "Enter node data: ";
+            cin >> node_data;
+            insert_begining(node_data);
+            cout << "modified list after insertion: "; 
+            print_linked_list();
+        }
+        if(option == 2)
+        {
+            cout << "Enter node data: ";
+            cin >> node_data;
+            cout << "Enter position: ";
+            cin >> position;
+            insert_in_a_position(node_data, position);
+            cout << "modified list after insertion: "; 
+            print_linked_list();
+        }
+        if(option == 3)
+        {
+            cout << "Enter position to delete: ";
+            cin >> position;
+            delete_in_a_position(position);
+            print_linked_list();
+            cout << "modified list after deletation: "; 
+            print_linked_list();
+            
+        }
+        if(option == 4)
+        {
+            cout << "reverse list using iterative method: " << endl;
+            reverse_linked_list();
+            cout << "modified list after reverse: "; 
+            print_linked_list();
+        }
+        if(option == 5)
+        {
+            cout << "reverse list uisng recursion: " << endl;
+            reverse_link_list_using_recursion(head);
+            cout << "modified list after reverse: " << endl; 
+            print_linked_list();
+        }
+        if(option == 6)
+        {
+            cout << "print list using iterative method: ";
+            print_linked_list();
+            cout << "print list using recursion: ";
+            print_linked_list_using_recursion(head);
+            cout << "\nprint in reverse order using recursion: ";
+            print_linked_list_in_reverse_using_recursion(head);
+            cout << endl;
+        }
+        string instruction = 
+        "\n\n!!!!Choose one from the options!!!!\n"
+        "insert in the beginning : 1\n" 
+        "insert in a definite point: 2\n"
+        "delete a node in a position: 3\n" 
+        "reversed list: 4\n"
+        "reversed list uisng recursion: 5\n"
+        "print list list using different methods: 6\n"
+        "terminate the program: 0\n";
+
+        cout << instruction << endl;
+        cout << "Enter your choice: ";
+        cin >> option;
+    }
+
     return 0;
 }
