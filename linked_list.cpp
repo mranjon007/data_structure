@@ -120,6 +120,16 @@ void print_linked_list_using_recursion(Node* current_node)
 }
 
 
+void print_linked_list_in_reverse_using_recursion(Node* current_node)
+{
+    if(current_node == NULL)
+    {
+        return;
+    }
+    print_linked_list_in_reverse_using_recursion(current_node->next);
+    cout<< current_node->data << " ";
+}
+
 void reverse_linked_list()
 {
     Node* previous_node = NULL;
