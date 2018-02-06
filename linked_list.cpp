@@ -109,6 +109,17 @@ void print_linked_list()
 }
 
 
+void print_linked_list_using_recursion(Node* current_node)
+{
+    if(current_node == NULL)
+    {
+        return;
+    }
+    cout<< current_node->data << " ";
+    print_linked_list_using_recursion(current_node->next);
+}
+
+
 void reverse_linked_list()
 {
     Node* previous_node = NULL;
